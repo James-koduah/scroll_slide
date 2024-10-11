@@ -30,3 +30,16 @@ let combinedArray = [
 for (let item of combinedArray){
     cool_scroll_translate(item, 150)
 }
+
+function addScrollStyles() {
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.appendChild(document.createTextNode(`
+        .onscroll_l { transform: translate(-50px, 0); transition: .7s; opacity: 0; }
+        .onscroll_r { transform: translate(50px, 0); transition: .7s; opacity: 0; }
+        .onscroll_t { transform: translate(0px, -60px); transition: .7s; opacity: 0; }
+        .onscroll_d { transform: translate(0px, 60px); transition: .7s; opacity: 0; }
+    `));
+    document.head.appendChild(style);
+}
+addScrollStyles();
